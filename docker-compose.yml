@@ -23,7 +23,7 @@ services:
   db:
     image: postgres:13-alpine
     volumes:
-      - dev-db-data:./postgresql/data
+      - dev-db-data:/media/hspark/Samsung_T5/postgresql/recipe-app-api
     environment: 
       - POSTGRES_DB=devdb
       - POSTGRES_USER=devuser
