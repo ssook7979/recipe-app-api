@@ -15,12 +15,14 @@ class CreateUserView(generics.CreateAPIView):
 	'''Create a new user in the system.'''
 	serializer_class = UserSerializer
 
+
 class CreateTokenView(ObtainAuthToken):
 	'''Create a new auth token for user.'''
 	serializer_class = AuthTokenSerializer
-	renderer_class = api_settings.DEFAULT_RENDERER_CLASSES # for browsable 
-	
-class ManageUserView(generics.RetrieveAPIView):
+	renderer_class = api_settings.DEFAULT_RENDERER_CLASSES  # for browsable
+
+
+class ManageUserView(generics.RetrieveUpdateAPIView):
 	'''Manage the authenticated user.'''
 	serializer_class = UserSerializer
 	authentication_classes = [authentication.TokenAuthentication]
