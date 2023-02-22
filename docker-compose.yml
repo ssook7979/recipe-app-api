@@ -8,7 +8,7 @@ services:
         - DEV=true
     ports:
       - "8000:8000"
-      - "5679:5679+"
+      - "5679:5679"
     volumes:
       - ./app:/app
     command: >
